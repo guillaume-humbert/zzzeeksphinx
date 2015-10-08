@@ -6,3 +6,6 @@
 zzzeeksphinx_1.0.17.orig.tar.gz
 0358f05c00d81f18a7c159fa52b6a678fa1c87e3
 23928
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"
