@@ -6,7 +6,7 @@ Priority: optional
 Build-Depends: debhelper (>= 9), dh-python,
  python-all, python3-all,
  python-setuptools, python3-setuptools
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: https://bitbucket.org/zzzeek/zzzeeksphinx
 #Vcs-Git: git://anonscm.debian.org/python-modules/packages/zzzeeksphinx.git
 #Vcs-Browser: http://anonscm.debian.org/cgit/python-modules/packages/zzzeeksphinx.git

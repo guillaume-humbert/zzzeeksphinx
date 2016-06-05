@@ -1,3 +1,9 @@
+zzzeeksphinx (1.0.18-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat, 30 Jul 2016 23:42:34 +0200
+
 zzzeeksphinx (1.0.17-1) unstable; urgency=low
 
   * Initial release
