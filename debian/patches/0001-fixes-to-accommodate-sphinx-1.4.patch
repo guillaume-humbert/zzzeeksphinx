@@ -1,0 +1,45 @@
+From 0441d1e3f18ea3d5cf48fb3eddc4280d716a246e Mon Sep 17 00:00:00 2001
+From: Mike Bayer <mike_mp@zzzcomputing.com>
+Date: Wed, 11 May 2016 14:51:45 -0400
+Subject: - fixes to accommodate sphinx 1.4
+
+---
+ zzzeeksphinx/mako.py                           | 2 +-
+ zzzeeksphinx/themes/zzzeeksphinx/genindex.mako | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/zzzeeksphinx/mako.py b/zzzeeksphinx/mako.py
+index 8aac1bd..244de14 100644
+--- a/zzzeeksphinx/mako.py
++++ b/zzzeeksphinx/mako.py
+@@ -28,7 +28,7 @@ class MakoBridge(TOCMixin, TemplateBridge):
+             directories=builder.config.templates_path + [
+                 template_path
+             ],
+-            #format_exceptions=True,
++            # format_exceptions=True,
+             imports=[
+                 "from zzzeeksphinx import util"
+             ]
+diff --git a/zzzeeksphinx/themes/zzzeeksphinx/genindex.mako b/zzzeeksphinx/themes/zzzeeksphinx/genindex.mako
+index 9ea6795..76a3d90 100644
+--- a/zzzeeksphinx/themes/zzzeeksphinx/genindex.mako
++++ b/zzzeeksphinx/themes/zzzeeksphinx/genindex.mako
+@@ -21,7 +21,7 @@
+         numcols = 1
+         numitems = 0
+     %>
+-% for entryname, (links, subitems) in entries:
++% for entryname, (links, subitems) in [(a, b[0:2]) for a, b in entries]:
+ 
+ <dt>
+     % if links:
+@@ -36,7 +36,7 @@
+ 
+     % if subitems:
+     <dd><dl>
+-      % for subentryname, subentrylinks in subitems:
++      % for subentryname, subentrylinks in subitems[0:2]:
+       <dt><a href="${subentrylinks[0][1]}">${subentryname|h}</a>
+               % for j, (unknown, link) in enumerate(subentrylinks[1:]):
+                   <a href="${link}">[${j}]</a>
