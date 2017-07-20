@@ -1,3 +1,9 @@
+zzzeeksphinx (1.0.20-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 20 Jul 2017 20:43:49 +0200
+
 zzzeeksphinx (1.0.18-2) unstable; urgency=medium
 
   * Cherry pick upstream commit to fix Sphinx 1.4 compatibility (closes: 829020)
