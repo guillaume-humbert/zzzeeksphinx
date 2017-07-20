@@ -2,10 +2,10 @@
 0441d1e3f18ea3d5cf48fb3eddc4280d716a246e
 0441d1e3f18ea3d5cf48fb3eddc4280d716a246e
 ca06c504ee584d64900a66fa18c3041853e9069b
-ca06c504ee584d64900a66fa18c3041853e9069b
-zzzeeksphinx_1.0.18.orig.tar.gz
-a991c0d72c29bb2d0eda213f3a10db59803652dd
-22410
+319f978af489c8c52c15e280a12f618c043d35e5
+zzzeeksphinx_1.0.20.orig.tar.gz
+c91cd7e57c5f9939688e76dc6f907973829026e0
+23030
 debianTag="debian/%e%v"
 patchedTag="patched/%e%v"
 upstreamTag="upstream/%e%u"
