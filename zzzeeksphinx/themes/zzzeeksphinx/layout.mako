@@ -37,11 +37,13 @@
 
 
 <%
-withsidebar = bool(toc) and current_page_name != 'index'
+withsidebar = bool(toc) and (
+    theme_index_sidebar is True or current_page_name != 'index'
+)
 %>
 
 <%block name="head_title">
-    % if current_page_name != 'index':
+    % if theme_index_sidebar or current_page_name != 'index':
     ${capture(self.show_title) | util.striptags} &mdash;
     % endif
     ${docstitle|h}
@@ -87,7 +89,13 @@ withsidebar = bool(toc) and current_page_name != 'index'
 <div id="docs-top-navigation-container" class="body-background">
 <div id="docs-header">
     <div id="docs-version-header">
-        Release: <span class="version-num">${release}</span> | Release Date: ${release_date}
+        Release: <span class="version-num">${release}</span>
+        % if release_date:
+        | Release Date: ${release_date}
+        % else:
+        | Release Date: unreleased
+        % endif
+
     </div>
 
     <h1>${docstitle|h}</h1>
@@ -102,7 +110,11 @@ withsidebar = bool(toc) and current_page_name != 'index'
     % if not withsidebar:
         <div id="index-nav">
             <form class="search" action="${pathto('search')}" method="get">
-              <input type="text" name="q" size="12" /> <input type="submit" value="${_('Search')}" />
+              <label>
+                 Search terms:
+              <input type="text" placeholder="search..." name="q" size="12" />
+              </label>
+              <input type="submit" value="${_('Search')}" />
               <input type="hidden" name="check_keywords" value="yes" />
               <input type="hidden" name="area" value="default" />
             </form>
@@ -132,7 +144,10 @@ withsidebar = bool(toc) and current_page_name != 'index'
 
             <div id="sidebar-search">
                 <form class="search" action="${pathto('search')}" method="get">
-                  <input type="text" name="q" size="12" /> <input type="submit" value="${_('Search')}" />
+                  <label>
+                  Search terms:
+                  <input type="text" placeholder="search..." name="q" size="12" />
+                  </label>
                   <input type="hidden" name="check_keywords" value="yes" />
                   <input type="hidden" name="area" value="default" />
                 </form>
@@ -141,6 +156,12 @@ withsidebar = bool(toc) and current_page_name != 'index'
         </div>
 
         <div id="docs-sidebar">
+
+        <div id="sidebar-banner">
+            ${parent.bannerad()}
+        </div>
+
+        <div id="docs-sidebar-inner">
 
         <%
             breadcrumb = parents[:]
@@ -174,6 +195,8 @@ withsidebar = bool(toc) and current_page_name != 'index'
         % endif
 
         </div>
+
+        </div>
     % endif
 
     </div>
@@ -205,7 +228,7 @@ withsidebar = bool(toc) and current_page_name != 'index'
 
 </div>
 
-<div id="docs-bottom-navigation" class="docs-navigation-links">
+<div id="docs-bottom-navigation" class="docs-navigation-links${', withsidebar' if withsidebar else ''}">
     % if prevtopic:
         Previous:
         <a href="${prevtopic['link']|h}" title="${_('previous chapter')}">${prevtopic['title']}</a>
