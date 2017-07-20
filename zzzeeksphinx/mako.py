@@ -5,8 +5,10 @@ from sphinx.jinja2glue import BuiltinTemplateLoader
 from mako.lookup import TemplateLookup
 from .toc import TOCMixin
 import os
+import re
 
 rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
 
 class MakoBridge(TOCMixin, TemplateBridge):
     def init(self, builder, *args, **kw):
@@ -15,7 +17,9 @@ class MakoBridge(TOCMixin, TemplateBridge):
 
         builder.config.html_context['release_date'] = \
             builder.config['release_date']
-        builder.config.html_context['site_base'] = builder.config['site_base']
+        protocol_agnostic = builder.config['site_base']
+        protocol_agnostic = re.sub("^https?://", "//", protocol_agnostic)
+        builder.config.html_context['site_base'] = protocol_agnostic
 
         self.app = builder.app
 
@@ -72,6 +76,7 @@ class MakoBridge(TOCMixin, TemplateBridge):
         context.setdefault("canonical_url", None)
         context.setdefault("single_version", None)
         context.setdefault("rtd_language", "en")
+
         # override context attributes
         self.setup_ctx(context)
         context.setdefault('_', lambda x: x)
