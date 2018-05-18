@@ -8,8 +8,6 @@ Build-Depends: debhelper (>= 9), dh-python,
  python-setuptools, python3-setuptools
 Standards-Version: 4.0.0
 Homepage: https://bitbucket.org/zzzeek/zzzeeksphinx
-#Vcs-Git: git://anonscm.debian.org/python-modules/packages/zzzeeksphinx.git
-#Vcs-Browser: http://anonscm.debian.org/cgit/python-modules/packages/zzzeeksphinx.git
 Vcs-Git: https://salsa.debian.org/python-team/modules/zzzeeksphinx.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/zzzeeksphinx
 
