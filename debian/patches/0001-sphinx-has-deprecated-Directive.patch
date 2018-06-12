@@ -1,0 +1,34 @@
+From abba9815ee81978c1d706be089cf124099f9afdc Mon Sep 17 00:00:00 2001
+From: Mike Bayer <mike_mp@zzzcomputing.com>
+Date: Fri, 21 Jul 2017 13:31:28 -0400
+Subject: - sphinx has deprecated Directive
+
+---
+ zzzeeksphinx/dialect_info.py | 2 +-
+ zzzeeksphinx/viewsource.py   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/zzzeeksphinx/dialect_info.py b/zzzeeksphinx/dialect_info.py
+index ce5f316..e66219f 100644
+--- a/zzzeeksphinx/dialect_info.py
++++ b/zzzeeksphinx/dialect_info.py
+@@ -1,5 +1,5 @@
+ import re
+-from sphinx.util.compat import Directive
++from docutils.parsers.rst import Directive
+ from docutils import nodes
+ 
+ 
+diff --git a/zzzeeksphinx/viewsource.py b/zzzeeksphinx/viewsource.py
+index d510582..5762d85 100644
+--- a/zzzeeksphinx/viewsource.py
++++ b/zzzeeksphinx/viewsource.py
+@@ -3,7 +3,7 @@ from sphinx.ext.viewcode import collect_pages
+ from sphinx.pycode import ModuleAnalyzer
+ import imp
+ import re
+-from sphinx.util.compat import Directive
++from docutils.parsers.rst import Directive
+ import os
+ from docutils.statemachine import StringList
+ from sphinx.environment import NoUri

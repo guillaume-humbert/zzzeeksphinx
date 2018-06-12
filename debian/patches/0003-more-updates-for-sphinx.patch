@@ -1,0 +1,42 @@
+From 84f2ef18d8680774fe004977a7727c0323622d01 Mon Sep 17 00:00:00 2001
+From: Mike Bayer <mike_mp@zzzcomputing.com>
+Date: Fri, 16 Feb 2018 13:33:55 -0500
+Subject: - more updates for sphinx
+
+---
+ zzzeeksphinx/viewsource.py | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/zzzeeksphinx/viewsource.py b/zzzeeksphinx/viewsource.py
+index 7ee590b..8b20c43 100644
+--- a/zzzeeksphinx/viewsource.py
++++ b/zzzeeksphinx/viewsource.py
+@@ -100,7 +100,7 @@ def _view_source_node(env, text, state):
+         code = analyzer.code
+ 
+     if state is not None:
+-        docstring = _find_mod_docstring(analyzer)
++        docstring = _find_mod_docstring(pathname)
+         if docstring:
+             # get rid of "foo.py" at the top
+             docstring = re.sub(r"^[a-zA-Z_0-9]+\.py", "", docstring)
+@@ -155,15 +155,16 @@ def _view_source_node(env, text, state):
+     return return_node
+ 
+ 
+-def _find_mod_docstring(analyzer):
++def _find_mod_docstring(pathname):
+     """attempt to locate the module-level docstring.
+ 
+     Note that sphinx autodoc just uses ``__doc__``.  But we don't want
+     to import the module, so we need to parse for it.
+ 
+     """
+-    analyzer.tokenize()
+-    for type_, parsed_line, start_pos, end_pos, raw_line in analyzer.tokens:
++    fhandle = open(pathname, 'rb')
++    for type_, parsed_line, start_pos, end_pos, raw_line in \
++            token.tokenize(fhandle.readline):
+         if type_ == token.COMMENT:
+             continue
+         elif type_ == token.STRING:

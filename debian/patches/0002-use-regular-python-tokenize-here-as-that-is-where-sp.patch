@@ -1,0 +1,23 @@
+From ca98e13d9f017353508e026cbf59ad007d9a2511 Mon Sep 17 00:00:00 2001
+From: Mike Bayer <mike_mp@zzzcomputing.com>
+Date: Fri, 16 Feb 2018 12:18:08 -0500
+Subject: =?UTF-8?q?-=20use=20regular=20python=20tokenize=20here=20as=20tha?=
+ =?UTF-8?q?t=20is=20where=20sphinx=20was=0Agetting=20it?=
+
+---
+ zzzeeksphinx/viewsource.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/zzzeeksphinx/viewsource.py b/zzzeeksphinx/viewsource.py
+index 5762d85..7ee590b 100644
+--- a/zzzeeksphinx/viewsource.py
++++ b/zzzeeksphinx/viewsource.py
+@@ -7,7 +7,7 @@ from docutils.parsers.rst import Directive
+ import os
+ from docutils.statemachine import StringList
+ from sphinx.environment import NoUri
+-from sphinx.pycode.pgen2 import token
++import tokenize as token
+ import warnings
+ from . import util
+ 
