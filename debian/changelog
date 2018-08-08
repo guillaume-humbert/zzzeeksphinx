@@ -1,3 +1,9 @@
+zzzeeksphinx (1.0.20-3) UNRELEASED; urgency=medium
+
+  * Convert git repository from git-dpm to gbp layout
+
+ -- Ondřej Nový <onovy@debian.org>  Wed, 08 Aug 2018 09:07:51 +0200
+
 zzzeeksphinx (1.0.20-2) unstable; urgency=medium
 
   [ Ondřej Nový ]
