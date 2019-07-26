@@ -1,10 +1,11 @@
-zzzeeksphinx (1.0.20-3) UNRELEASED; urgency=medium
+zzzeeksphinx (1.0.20-3) unstable; urgency=medium
 
+  * Team upload.
   * Convert git repository from git-dpm to gbp layout
   * Use debhelper-compat instead of debian/compat.
   * Drop Python 2 support.
 
- -- Ondřej Nový <onovy@debian.org>  Wed, 08 Aug 2018 09:07:51 +0200
+ -- Ondřej Nový <onovy@debian.org>  Fri, 26 Jul 2019 21:44:33 +0200
 
 zzzeeksphinx (1.0.20-2) unstable; urgency=medium
 
