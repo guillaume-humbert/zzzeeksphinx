@@ -2,6 +2,7 @@ zzzeeksphinx (1.0.20-3) UNRELEASED; urgency=medium
 
   * Convert git repository from git-dpm to gbp layout
   * Use debhelper-compat instead of debian/compat.
+  * Drop Python 2 support.
 
  -- Ondřej Nový <onovy@debian.org>  Wed, 08 Aug 2018 09:07:51 +0200
 

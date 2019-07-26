@@ -4,43 +4,12 @@ Uploaders: Piotr Ożarowski <piotr@debian.org>
 Section: python
 Priority: optional
 Build-Depends: debhelper-compat (= 9), dh-python,
- python-all, python3-all,
- python-setuptools, python3-setuptools
+ python3-all,
+ python3-setuptools
 Standards-Version: 4.0.0
 Homepage: https://bitbucket.org/zzzeek/zzzeeksphinx
 Vcs-Git: https://salsa.debian.org/python-team/modules/zzzeeksphinx.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/zzzeeksphinx
-
-Package: python-zzzeeksphinx
-Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}
-Recommends: python-pygments
-Enhances: python-sphinx
-Description: Zzzeek's Sphinx layout and utilities
- This layout is first and foremost pulled in for the SQLAlchemy documentation
- builds (and possibly other related projects), but is also usable as a
- standalone theme / utility set for any project.
- .
- Features include:
- .
-  * uses Mako templates instead of Jinja, for more programmatic capabilities
-    inside of templates
-  * layout includes an independently scrollable sidebar
-  * unique (to Sphinx) “contextual” sidebar contents that shows the current
-    page in context with all sibling pages
-  * modifications to autodoc which illustrate inherited classes, bases, method
-    documentation illustrates if a method is only inherited from the base or
-    overridden
-  * “dynamic base” feature that will, under ReadTheDocs, pull in optional
-    .mako and .py files from the website of your choice that will serve as an
-    alternate base template and a source of extra config setup, respectively,
-    allowing the layout to be integrated into the layout of an external site
-    when viewing on the web
-  * “viewsource” extension that can provide highlighted sourcecode to any
-    Python file arbitrarily
-  * SQLAlchemy-specific stuff, like the [SQL] popups, the dialect info
-    directives
-  * scss support using pyscss
 
 Package: python3-zzzeeksphinx
 Architecture: all
