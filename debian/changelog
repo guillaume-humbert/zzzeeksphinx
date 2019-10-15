@@ -1,3 +1,9 @@
+zzzeeksphinx (1.0.20-4) bionic; urgency=medium
+
+  * Packaging for Ubuntu.
+
+ -- Guillaume J Humbert <guillaume.j.humbert@pm.me>  Tue, 15 Oct 2019 11:30:00 +0800
+
 zzzeeksphinx (1.0.20-3) unstable; urgency=medium
 
   * Team upload.
